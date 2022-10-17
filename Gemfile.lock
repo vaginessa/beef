@@ -1,7 +1,8 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.6)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
     ansi (1.4.3)
     daemons (1.1.9)
     data_objects (0.10.14)
@@ -13,6 +14,12 @@ GEM
       dm-core (~> 1.2.0)
     dm-migrations (1.2.0)
       dm-core (~> 1.2.0)
+    dm-serializer (1.2.2)
+      dm-core (~> 1.2.0)
+      fastercsv (~> 1.5)
+      json (~> 1.6)
+      json_pure (~> 1.6)
+      multi_json (~> 1.0)
     dm-sqlite-adapter (1.2.0)
       dm-do-adapter (~> 1.2.0)
       do_sqlite3 (~> 0.10.6)
@@ -24,16 +31,26 @@ GEM
     erubis (2.7.0)
     eventmachine (1.0.7)
     execjs (2.0.2)
+    fastercsv (1.5.5)
     geoip (1.4.0)
     json (1.8.1)
+    json_pure (1.8.6)
     librex (0.0.68)
     libv8 (3.11.8.17)
+    mime-types (3.4.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2022.0105)
+    mojo_magick (0.6.7)
     msfrpc-client (1.0.1)
       librex (>= 0.0.32)
       msgpack (>= 0.4.5)
     msgpack (0.5.8)
     multi_json (1.9.3)
     parseconfig (1.0.4)
+    public_suffix (5.0.0)
+    qr4r (0.6.1)
+      mojo_magick (~> 0.6.5)
+      rqrcode_core (~> 0.1)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -41,6 +58,7 @@ GEM
     ref (1.0.5)
     rexec (1.6.3)
       rainbow
+    rqrcode_core (0.2.0)
     rubydns (0.7.0)
       eventmachine (~> 1.0.0)
       rexec (~> 1.6.2)
@@ -70,19 +88,22 @@ DEPENDENCIES
   data_objects
   dm-core
   dm-migrations
+  dm-serializer
   dm-sqlite-adapter
   em-websocket (~> 0.3.6)
   erubis
-  eventmachine (= 1.0.3)
+  eventmachine
   execjs
   geoip
   json
+  mime-types
   msfrpc-client
   parseconfig
-  rack (= 1.5.2)
+  qr4r
+  rack
   rubydns (= 0.7.0)
   rubyzip (>= 1.0.0)
-  sinatra (= 1.4.2)
+  sinatra
   term-ansicolor
   therubyracer (= 0.11.3)
   thin
